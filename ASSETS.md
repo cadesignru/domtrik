@@ -34,7 +34,7 @@ Regular (400), Medium (500), SemiBold (600), Bold (700), ExtraBold (800).
 
 | Файл | Из чего собран |
 | --- | --- |
-| `assets/icons/arrow-up-right.svg` (38×38) | белый круг + `icon-arrow-up-right-02` (оранжевая стрелка) |
+| `assets/icons/arrow-up-right.svg` (38×38) | белый круг + `icon-arrow-up-right-02`, стрелка перекрашена в `#292E3A` под цвет текста чипа |
 | `assets/icons/plus.svg` (38×38) | белый круг + `icon-arrow-up-right-03` (плюс) |
 | `assets/icons/quota.svg` (34×34) | оранжевый круг + `icon-arrow-up-right-01` (белая стрелка) |
 | `assets/icons/arrow-link-white.svg` (41×41) | белый контур + `icon-other-06` (белая стрелка) |
