@@ -358,10 +358,10 @@ button {
 .hero__title-line--underlined::after {
   content: "";
   position: absolute;
-  top: 66px;
+  top: 62px;
   left: 0;
   width: 587px;
-  height: 4px;
+  height: 15px;
   background-image: url("../assets/icons/hero-underline.svg");
   background-repeat: no-repeat;
   background-size: 100% 100%;
