@@ -1469,20 +1469,13 @@ button {
   height: 865px;
 }
 
-.geography__map-base {
+.geography__map-img {
   position: absolute;
   top: 0;
   left: 0;
   width: 1560px;
   height: 865px;
-}
-
-.geography__map-dots {
-  position: absolute;
-  top: 71px;
-  left: 4px;
-  width: 1468px;
-  height: 743px;
+  object-fit: contain;
 }
 
 .geography__title {
