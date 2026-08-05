@@ -46,6 +46,7 @@
   --color-num: #D5D5D8;
   --color-border-soft: #FFB599;
   --color-muted: #7F838B;
+  --color-error: #D92D20;
   --font-main: "Vela Sans", "Segoe UI", Arial, sans-serif;
   --layout-width: 1920px;
   --container-width: 1560px;
@@ -2160,6 +2161,16 @@ button {
   color: var(--color-muted);
 }
 
+.modal-form__input:focus {
+  outline: 1.5px solid var(--color-muted);
+  outline-offset: 0;
+}
+
+.modal-form__input.is-invalid,
+.modal-form__input.is-invalid:focus {
+  outline: 1.5px solid var(--color-error);
+}
+
 .modal-form__btn {
   height: 66px;
   font-size: 20px;
@@ -2183,11 +2194,27 @@ button {
 }
 
 .modal-form__agree-text {
-  max-width: 420px;
+  max-width: 560px;
   font-size: 14px;
   line-height: normal;
   text-align: center;
   color: var(--color-muted);
+}
+
+.field-error {
+  margin-top: -8px;
+  font-size: 13px;
+  line-height: normal;
+  color: var(--color-error);
+}
+
+.field-error--agree {
+  margin-top: 0;
+  text-align: center;
+}
+
+.modal-form__agree .form__checkbox.is-invalid {
+  border-color: var(--color-error);
 }
 
 .gallery {

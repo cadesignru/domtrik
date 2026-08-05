@@ -113,3 +113,94 @@ document.querySelectorAll("[data-gallery]").forEach((gallery) => {
   window.addEventListener("resize", onScroll, { passive: true });
   update();
 })();
+
+/* Валидация формы «Оставить заявку» */
+
+(() => {
+  const form = document.querySelector(".modal-form");
+  if (!form) return;
+
+  const rules = {
+    name: {
+      test: (value) => value.trim().length >= 2,
+      message: "Укажите имя",
+    },
+    email: {
+      test: (value) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim()),
+      message: "Проверьте адрес почты",
+    },
+    phone: {
+      test: (value) => (value.match(/\d/g) || []).length >= 10,
+      message: "Укажите телефон — не меньше 10 цифр",
+    },
+  };
+
+  const clearError = (field) => {
+    field.classList.remove("is-invalid");
+    field.removeAttribute("aria-invalid");
+    const next = field.nextElementSibling;
+    if (next && next.classList.contains("field-error")) next.remove();
+    const label = field.closest(".modal-form__agree");
+    if (label) {
+      const after = label.nextElementSibling;
+      if (after && after.classList.contains("field-error")) after.remove();
+    }
+  };
+
+  const showError = (field, message) => {
+    clearError(field);
+    field.classList.add("is-invalid");
+    field.setAttribute("aria-invalid", "true");
+    const note = document.createElement("p");
+    note.className = "field-error";
+    note.textContent = message;
+    const label = field.closest(".modal-form__agree");
+    if (label) {
+      note.classList.add("field-error--agree");
+      label.after(note);
+    } else {
+      field.after(note);
+    }
+  };
+
+  const validate = () => {
+    let firstInvalid = null;
+
+    Object.entries(rules).forEach(([name, rule]) => {
+      const field = form.elements[name];
+      if (!field) return;
+      if (rule.test(field.value)) {
+        clearError(field);
+      } else {
+        showError(field, rule.message);
+        firstInvalid = firstInvalid || field;
+      }
+    });
+
+    const agree = form.elements.agree;
+    if (agree) {
+      if (agree.checked) {
+        clearError(agree);
+      } else {
+        showError(agree, "Подтвердите согласие на обработку данных");
+        firstInvalid = firstInvalid || agree;
+      }
+    }
+
+    return firstInvalid;
+  };
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const firstInvalid = validate();
+    if (firstInvalid) {
+      firstInvalid.focus();
+      return;
+    }
+    // Форма проверена. Отправку на сервер подключить здесь.
+    form.dispatchEvent(new CustomEvent("form:valid", { bubbles: true }));
+  });
+
+  form.addEventListener("input", (event) => clearError(event.target));
+  form.addEventListener("change", (event) => clearError(event.target));
+})();
