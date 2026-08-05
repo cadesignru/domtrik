@@ -85,7 +85,7 @@
   </ul>
 
   <div class="hero__side">
-    <button class="side-btn" type="button">
+    <button class="side-btn" type="button" data-modal-open="modal-order">
       <img class="side-btn__icon" src="assets/icons/side-btn-arrow.svg" alt="">
       <span class="side-btn__text">Получить оптовый прайс</span>
     </button>
@@ -447,40 +447,40 @@
   <h2 class="section-title">Вопросы <span class="section-title__accent">и ответы</span></h2>
   <ul class="faq__list">
     <li class="faq__item">
-      <a class="faq__card" href="#">
+      <button class="faq__card" type="button" data-modal-open="modal-how-to-order">
         <span class="faq__question">Как сделать заказ и дозаказ?</span>
         <span class="faq__toggle" aria-hidden="true"></span>
-      </a>
+      </button>
     </li>
     <li class="faq__item">
-      <a class="faq__card" href="#">
+      <button class="faq__card" type="button" data-modal-open="modal-delivery">
         <span class="faq__question">Доставка и правила работы?</span>
         <span class="faq__toggle" aria-hidden="true"></span>
-      </a>
+      </button>
     </li>
     <li class="faq__item">
-      <a class="faq__card" href="#">
+      <button class="faq__card" type="button" data-modal-open="modal-sizes">
         <span class="faq__question">Таблица размеров</span>
         <span class="faq__toggle" aria-hidden="true"></span>
-      </a>
+      </button>
     </li>
     <li class="faq__item">
-      <a class="faq__card" href="#">
+      <button class="faq__card" type="button" data-modal-open="modal-certificates">
         <span class="faq__question">Сертификаты</span>
         <span class="faq__toggle" aria-hidden="true"></span>
-      </a>
+      </button>
     </li>
     <li class="faq__item">
-      <a class="faq__card" href="#">
+      <button class="faq__card" type="button" data-modal-open="modal-min-order">
         <span class="faq__question">Какой минимальный заказ?</span>
         <span class="faq__toggle" aria-hidden="true"></span>
-      </a>
+      </button>
     </li>
     <li class="faq__item">
-      <a class="faq__card" href="#">
+      <button class="faq__card" type="button" data-modal-open="modal-schedule">
         <span class="faq__question">График работы</span>
         <span class="faq__toggle" aria-hidden="true"></span>
-      </a>
+      </button>
     </li>
   </ul>
 </section>
@@ -602,5 +602,128 @@
 
 </div>
 <script src="js/main.js"></script>
+<div class="modal" id="modal-order" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__card modal__card--narrow" role="dialog" aria-modal="true" aria-labelledby="modal-order-title">
+    <button class="modal__close" type="button" aria-label="Закрыть" data-modal-close></button>
+    <h2 class="modal__title modal__title--center" id="modal-order-title">Оставить заявку</h2>
+    <form class="modal-form" action="#" method="post" novalidate>
+      <input class="modal-form__input" type="text" name="name" placeholder="Ваше имя" aria-label="Ваше имя" required>
+      <input class="modal-form__input" type="email" name="email" placeholder="E-mail" aria-label="E-mail" required>
+      <input class="modal-form__input" type="tel" name="phone" placeholder="Телефон" aria-label="Телефон" required>
+      <button class="modal-form__btn" type="submit">Получить оптовый прайс</button>
+      <label class="modal-form__agree">
+        <input class="form__checkbox" type="checkbox" name="agree" required>
+        <span class="modal-form__agree-text">Я подтверждаю свое согласие с <a class="form__link" href="#">Политикой конфиденциальности</a> и даю <a class="form__link" href="#">разрешение на обработку моих персональных данных</a></span>
+      </label>
+    </form>
+  </div>
+</div>
+
+<div class="modal" id="modal-how-to-order" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="modal-how-to-order-title">
+    <button class="modal__close" type="button" aria-label="Закрыть" data-modal-close></button>
+    <h2 class="modal__title" id="modal-how-to-order-title">Как сделать заказ и дозаказ?</h2>
+    <div class="modal__text">
+      <p>Сотрудничать с нами просто и выгодно. Мы предлагаем гибкие условия для каждого оптового партнера.</p>
+      <p><b>Всего 3 простых шага для первого заказа:</b></p>
+      <p><b>1. Оставьте заявку</b><br>Заполните форму «Рассчитать заказ» на нашем сайте.</p>
+      <p><b>2. Получите каталог</b><br>Наш менеджер свяжется с вами в ближайшее время. Он вышлет актуальный оптовый прайс, познакомит с моделями и регулярными новинками ассортимента.</p>
+      <p><b>3. Согласуйте детали</b><br>Менеджер поможет сформировать заказ и подберет оптимальный способ оплаты.</p>
+      <p><b>Специальные условия на первый заказ:</b></p>
+      <p><b>Покупка без рядов.</b> При заказе на сумму от 30 000 рублей возможен выкуп товаров без сбора полных размерных рядов.<br><b>Бесплатная доставка.</b> При заказе на сумму от 70 000 рублей мы дарим первую доставку в любой регион РФ!</p>
+      <p><b>Информация о доставке:</b><br>Любая ТК на выбор. Мы отправляем заказы любой удобной для вас транспортной компанией.<br>Быстрая отправка. Чаще всего мы отгружаем заказы через Яндекс Доставку, так как это самый быстрый способ получить товар.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-delivery" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__card modal__card--wide" role="dialog" aria-modal="true" aria-labelledby="modal-delivery-title">
+    <button class="modal__close" type="button" aria-label="Закрыть" data-modal-close></button>
+    <h2 class="modal__title" id="modal-delivery-title">Доставка и правила работы?</h2>
+    <div class="modal__text">
+      <p><b>Мы отправляем заказы БЫСТРО</b> любой транспортной компанией, имеющей филиал в г. Иваново. Любая ТК на выбор. Чаще всего мы отгружаем заказы через Яндекс Доставку, так как это самый быстрый способ получить товар. Доставка заказов осуществляется в любой уголок России, Казахстан, Белоруссию. Доставка до транспортной компании бесплатно!</p>
+      <p>Габаритные размеры заказов</p>
+    </div>
+    <table class="modal-table">
+      <thead>
+        <tr><th>Сумма</th><th>Размер</th><th>Объем</th><th>Масса</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>30 000&#8381;</td><td>0.75x0.5x0.3</td><td>= 0.1125</td><td>18 - 30 кг</td></tr>
+        <tr><td>20 000&#8381;</td><td>0.5x0.5x0.3</td><td>= 0.075</td><td>12 - 20 кг</td></tr>
+        <tr><td>10 000&#8381;</td><td>0.3x0.5x0.5</td><td>= 0.045</td><td>6 - 10 кг</td></tr>
+        <tr><td>5 000&#8381;</td><td>0.25x0.3x0.3</td><td>= 0.0225</td><td>3 - 5 кг</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="modal" id="modal-sizes" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__card modal__card--widest" role="dialog" aria-modal="true" aria-labelledby="modal-sizes-title">
+    <button class="modal__close" type="button" aria-label="Закрыть" data-modal-close></button>
+    <h2 class="modal__title" id="modal-sizes-title">Таблица размеров</h2>
+    <div class="modal__scroll">
+      <table class="modal-table modal-table--sizes">
+        <tbody>
+          <tr><th>Размер</th><td>42</td><td>44</td><td>46</td><td>48</td><td>50</td><td>52</td><td>54</td><td>56</td><td>58</td><td>60</td><td>62</td><td>64</td><td>66</td><td>68</td><td>70</td><td>72</td></tr>
+          <tr><th>Обхват груди, см.</th><td>84</td><td>88</td><td>92</td><td>96</td><td>100</td><td>104</td><td>108</td><td>112</td><td>116</td><td>120</td><td>124</td><td>128</td><td>132</td><td>136</td><td>140</td><td>144</td></tr>
+          <tr><th>Обхват талии, см.</th><td>63.4</td><td>67.6</td><td>71.8</td><td>76</td><td>80.2</td><td>84.4</td><td>89.2</td><td>94</td><td>98.8</td><td>103.6</td><td>108.4</td><td>113.2</td><td>118</td><td>122.8</td><td>127.6</td><td>132.4</td></tr>
+          <tr><th>Обхват бедер, см.</th><td>92</td><td>96</td><td>100</td><td>104</td><td>108</td><td>112</td><td>116</td><td>120</td><td>124</td><td>128</td><td>132</td><td>136</td><td>140</td><td>144</td><td>148</td><td>152</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-certificates" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__card modal__card--wide" role="dialog" aria-modal="true" aria-labelledby="modal-certificates-title">
+    <button class="modal__close" type="button" aria-label="Закрыть" data-modal-close></button>
+    <h2 class="modal__title" id="modal-certificates-title">Сертификаты</h2>
+    <div class="gallery" data-gallery>
+      <button class="gallery__nav gallery__nav--prev" type="button" aria-label="Предыдущий документ" data-gallery-prev></button>
+      <div class="gallery__stage"></div>
+      <button class="gallery__nav gallery__nav--next" type="button" aria-label="Следующий документ" data-gallery-next></button>
+      <p class="gallery__empty">Сканы документов ещё не загружены.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-min-order" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="modal-min-order-title">
+    <button class="modal__close" type="button" aria-label="Закрыть" data-modal-close></button>
+    <h2 class="modal__title" id="modal-min-order-title">Какой минимальный заказ?</h2>
+    <div class="modal__text">
+      <p><b>Ваш мощный старт всего от 30 000 рублей!</b></p>
+      <p>Вам больше не нужно замораживать миллионы в складских остатках. Минимальный порог заказа составляет всего 30 000 рублей. Это идеальный шанс протестировать новый ассортимент, быстро обновить витрину или запустить бизнес без финансового риска. Мы делаем крупный опт доступным для каждого!</p>
+      <p>Мы избавляем вас от главной боли любого магазина — неликвидных остатков и мертвых размеров. Выкупайте товар без привязки к размерным рядам! Забирайте только те позиции, цвета и размеры, которые обожают ваши клиенты. Формируйте идеальную матрицу товаров под ваш запрос.</p>
+      <p><b>Грандиозная акция: <span class="modal__accent">первая доставка БЕСПЛАТНО!</span></b></p>
+      <p>- Бесплатная первая доставка в абсолютно любой регион.<br>- Условие: просто сделайте заказ на сумму от 70 000 рублей.<br>- Скорость: мы отгрузим и отправим ваш заказ в течение 3 дней с момента оформления.</p>
+      <p><b>Выбирайте лучшее, заказывайте гибко и растите вместе с нами!</b></p>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-schedule" hidden>
+  <div class="modal__backdrop" data-modal-close></div>
+  <div class="modal__card modal__card--narrow" role="dialog" aria-modal="true" aria-labelledby="modal-schedule-title">
+    <button class="modal__close" type="button" aria-label="Закрыть" data-modal-close></button>
+    <h2 class="modal__title" id="modal-schedule-title">График работы</h2>
+    <table class="modal-table">
+      <thead>
+        <tr><th>ПН - ЧТ</th><th>ПТ</th><th>СБ - ВС</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>08:00 - 17:00</td><td>08:00 - 16:30</td><td>Выходной</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
 </body>
 </html>
