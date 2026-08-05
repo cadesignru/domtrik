@@ -87,3 +87,29 @@ document.querySelectorAll("[data-gallery]").forEach((gallery) => {
   gallery.querySelector("[data-gallery-next]").addEventListener("click", () => step(1));
   render();
 });
+
+/* Плашка MAX: всплывает, когда до блока «С нами работать выгодно» долистали, и дальше держится */
+
+(() => {
+  const widget = document.querySelector(".max-widget");
+  const anchor = document.querySelector(".hero");
+  if (!widget || !anchor) return;
+
+  let ticking = false;
+
+  const update = () => {
+    ticking = false;
+    const passed = anchor.getBoundingClientRect().bottom <= 0;
+    widget.classList.toggle("is-visible", passed);
+  };
+
+  const onScroll = () => {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(update);
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll, { passive: true });
+  update();
+})();
