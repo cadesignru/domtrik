@@ -296,6 +296,7 @@ button {
   inset: -9.38%;
   width: 118.76%;
   height: 118.76%;
+  max-width: none;
 }
 
 .hero__decor--2 {
@@ -311,6 +312,7 @@ button {
   inset: -12.5%;
   width: 125%;
   height: 125%;
+  max-width: none;
 }
 
 .hero__media {
@@ -867,6 +869,7 @@ button {
   inset: -12.5%;
   width: 125%;
   height: 125%;
+  max-width: none;
 }
 
 .cta__blend {
@@ -1251,7 +1254,8 @@ button {
   inset: -11.54%;
   width: 123.08%;
   height: 123.08%;
-  opacity: 0.12;
+  opacity: 0.21;
+  max-width: none;
 }
 
 .cta__inner {
@@ -1588,6 +1592,7 @@ button {
   inset: -9.38%;
   width: 118.76%;
   height: 118.76%;
+  max-width: none;
 }
 
 .footer__decor--2 {
@@ -1613,6 +1618,7 @@ button {
   inset: -12.5%;
   width: 125%;
   height: 125%;
+  max-width: none;
 }
 
 .footer__content {
