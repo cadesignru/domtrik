@@ -451,6 +451,7 @@ button {
   flex-shrink: 0;
   width: 18px;
   height: 20px;
+  transform: rotate(90deg);
 }
 
 .side-btn__text {
@@ -532,6 +533,8 @@ button {
 
 .benefit__value {
   grid-area: 1 / 1;
+  font-size: 48px;
+  line-height: normal;
   color: var(--color-orange);
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
@@ -1842,6 +1845,8 @@ button {
 
 .markup-card__value {
   grid-area: 1 / 1;
+  font-size: 70px;
+  line-height: normal;
   text-align: center;
   white-space: nowrap;
   text-box-trim: trim-both;
