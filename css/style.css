@@ -388,7 +388,7 @@ button {
 }
 
 .hero__cta {
-  width: 100%;
+  flex: none;
 }
 
 .hero__badges {
@@ -737,7 +737,7 @@ button {
 .hit {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
   width: 504px;
 }
 
@@ -796,7 +796,7 @@ button {
   width: 210px;
   font-size: 16px;
   font-weight: 500;
-  line-height: 1.11;
+  line-height: 23px;
 }
 
 .hit__price {
@@ -1233,6 +1233,7 @@ button {
   inset: -11.54%;
   width: 123.08%;
   height: 123.08%;
+  opacity: 0.12;
 }
 
 .cta__inner {
