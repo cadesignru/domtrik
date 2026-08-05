@@ -598,9 +598,14 @@ button {
   line-height: normal;
   color: var(--color-num);
   white-space: nowrap;
+  transition: color 0.2s ease;
   transform: translateY(-50%);
   text-box-trim: trim-both;
   text-box-edge: cap alphabetic;
+}
+
+.reason:hover .reason__num {
+  color: var(--color-orange);
 }
 
 .reason__body {
@@ -1042,6 +1047,12 @@ button {
 .form__checkbox:checked {
   background-color: var(--color-orange);
   border-color: var(--color-orange);
+  -webkit-mask: none;
+  mask: none;
+  background-image: url("../assets/icons/icon-check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 11px 8px;
 }
 
 .form__agree-text {
@@ -1119,17 +1130,24 @@ button {
 }
 
 .about__play-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 24px;
-}
-
-.about__play-icon img {
   width: 14px;
   height: 18px;
-  max-width: none;
+  background-color: var(--color-white);
+  -webkit-mask: url("../assets/icons/icon-other-05.svg") no-repeat center / 14px 18px;
+  mask: url("../assets/icons/icon-other-05.svg") no-repeat center / 14px 18px;
+  transition: background-color 0.2s ease;
+}
+
+.about__play {
+  transition: background-color 0.2s ease;
+}
+
+.about__play:hover {
+  background-color: var(--color-white);
+}
+
+.about__play:hover .about__play-icon {
+  background-color: var(--color-orange);
 }
 
 .about__content {
@@ -1379,7 +1397,10 @@ button {
 }
 
 .order-form__checkbox:checked {
-  background-color: var(--color-white);
+  background-image: url("../assets/icons/icon-check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 11px 8px;
 }
 
 .order-form__agree-text {
@@ -1421,11 +1442,6 @@ button {
   padding: 50px;
   background-color: var(--color-gray);
   border-radius: 14px;
-  transition: background-color 0.2s ease;
-}
-
-.faq__card:hover {
-  background-color: #EAEAEC;
 }
 
 .faq__question {
@@ -1437,15 +1453,33 @@ button {
 }
 
 .faq__toggle {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
   width: 38px;
   height: 38px;
+  background-color: var(--color-white);
+  border-radius: 50%;
+  transition: background-color 0.2s ease;
 }
 
-.faq__toggle img {
-  width: 38px;
-  height: 38px;
+.faq__toggle::before {
+  content: "";
+  width: 13px;
+  height: 13px;
+  background-color: rgba(41, 46, 58, 0.6);
+  -webkit-mask: url("../assets/icons/icon-arrow-up-right-03.svg") no-repeat center / 13px 13px;
+  mask: url("../assets/icons/icon-arrow-up-right-03.svg") no-repeat center / 13px 13px;
+  transition: background-color 0.2s ease;
+}
+
+.faq__card:hover .faq__toggle {
+  background-color: var(--color-orange);
+}
+
+.faq__card:hover .faq__toggle::before {
+  background-color: var(--color-white);
 }
 
 .geography {
@@ -1692,6 +1726,22 @@ button {
 .socials__link--rt img {
   width: 18px;
   height: 14px;
+}
+
+.socials__link {
+  transition: background-color 0.2s ease;
+}
+
+.socials__link img {
+  transition: filter 0.2s ease;
+}
+
+.socials__link:hover {
+  background-color: var(--color-orange);
+}
+
+.socials__link:hover img {
+  filter: brightness(0) invert(1);
 }
 
 .footer__form {
